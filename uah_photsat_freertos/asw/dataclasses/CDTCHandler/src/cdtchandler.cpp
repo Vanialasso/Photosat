@@ -63,7 +63,7 @@ CDTCExecCtrl CDTCHandler::GetExecCtrl() {
 
 	case (129):
 
-		execCtrl.mExecCtrl = ExecCtrlObservTC;
+		execCtrl.mExecCtrl = ExecObs;
 		break;
 
 	case (2):
