@@ -35,7 +35,7 @@ public:
 	 */
 	 enum TEDROOMCCObsMngSignal { EDROOMSignalTimeout, 
 							EDROOMSignalDestroy, 
-							SObservTC };
+							SObsMng_TC };
 
 	/**
 	 * \class CCObsMng::CEDROOMMemory
@@ -90,8 +90,8 @@ public:
 	//******************  Component Communication Ports *******************
 	// ********************************************************************
 
-	//! ObservCtrl Component Port
-	CEDROOMInterface	ObservCtrl;
+	//! Obsmng Component Port
+	CEDROOMInterface	Obsmng;
 
 
 	// ********************************************************************
@@ -174,7 +174,7 @@ public:
 	 */
 	enum TEDROOMCCObsMngSignal { EDROOMSignalTimeout,
 		EDROOMSignalDestroy,
-		SObservTC };
+		SObsMng_TC };
 
 
 		friend class CCObsMng;
@@ -189,7 +189,7 @@ public:
 		CEDROOMMessage * &MsgBack;
 
 		//!Component ports
-		CEDROOMInterface & ObservCtrl;
+		CEDROOMInterface & Obsmng;
 		CEDROOMTimingInterface & ObservTimer;
 		CEDROOMTimingInterface & AttCtrlTimer;
 
@@ -200,18 +200,17 @@ public:
 			Observation};
 
 		//!Transition Identifiers
-		enum TEDROOMTransitionID{Init,
-			ExecTC,
-			DoAttCtrl,
-			DoAttCtrl_ToObservation,
-			DoAttCtrl_ToStandBy,
+		enum TEDROOMTransitionID{DoAttitudeCtrl,
+			DoAttitudeCtrl_ToObservation,
+			DoAttitudeCtrl_ProgAttitudeCtrl,
 			TakeImage,
-			TakeImage_LastImage,
-			TakeImage_NextImage,
+			TakeImage_ObservationProg,
+			TakeImage_ProgTakeImage,
+			Init,
+			ExecObs,
 			EDROOMMemoryTrans };
 
 		//!Constants
-		const Pr_Time CAttitudePeriod;
 		const Pr_Time CImageInterval;
 
 
@@ -256,17 +255,12 @@ public:
 		/**
 		 * \brief  
 		 */
-		void	FDoActtitudeCtrl();
+		void	FDoAttitudeCtrl();
 
 		/**
 		 * \brief  
 		 */
 		void	FEndObservation();
-
-		/**
-		 * \brief  
-		 */
-		void	FExecCameraMngTC();
 
 		/**
 		 * \brief  
@@ -277,11 +271,6 @@ public:
 		 * \brief  
 		 */
 		void	FProgAttitudeCtrl();
-
-		/**
-		 * \brief  
-		 */
-		void	FProgTakeImage();
 
 		/**
 		 * \brief  
@@ -302,6 +291,16 @@ public:
 		 * \brief  
 		 */
 		bool	GReadyToObservation();
+
+		/**
+		 * \brief 
+		 */
+		void	FexecObs();
+
+		/**
+		 * \brief 
+		 */
+		void	FProgTakeImage();
 
 	};
 
