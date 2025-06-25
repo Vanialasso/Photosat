@@ -175,7 +175,7 @@ void	CCObsMng::EDROOM_CTX_Top_0::FexecObs()
 		// Data access
 	
 	// ... =varSObsMng_TC;
-varSobsMng_TC.ExecCtrlObservTC
+varSObsMng_TC.ExecCtrlObservTC
 
 }
 
