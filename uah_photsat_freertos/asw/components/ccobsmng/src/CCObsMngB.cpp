@@ -186,8 +186,18 @@ varSObsMng_TC.ExecTC();
 void	CCObsMng::EDROOM_CTX_Top_0::FProgTakeImage()
 
 {
-
-
+   //Define absolute time
+  Pr_Time time;
+	 
+	//Timing Service useful methods
+	 
+	//time.GetTime(); // Get current monotonic time
+	//time.Add(X,Y); // Add X sec + Y microsec
+time.GetTime();	
+VNextTimeOut+= Pr_Time(0,100000); // Add X sec + Y microsec 
+time=VNextTimeOut; 
+   //Program absolute timer 
+   ObservTimer.InformAt( time ); 
 }
 
 
