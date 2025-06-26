@@ -185,16 +185,16 @@ varSObsMng_TC.ExecTC();
 void	CCObsMng::EDROOM_CTX_Top_0::FProgTakeImage()
 
 {
-   //Define absolute time
-  Pr_Time time;
-	 
+   //Define interval
+  Pr_Time interval;
+	
 	//Timing Service useful methods
 	 
-	//time.GetTime(); // Get current monotonic time
-	//time.Add(X,Y); // Add X sec + Y microsec
-interval=CImageInterval;
-   //Program absolute timer 
-   ObservTimer.InformAt( time ); 
+	//interval = Pr_Time(X,Y); // interval of X sec + Y microsec
+	 
+	interval=CImageInterval;
+   //Program relative timer 
+   ObservTimer.InformIn( interval ); 
 }
 
 
