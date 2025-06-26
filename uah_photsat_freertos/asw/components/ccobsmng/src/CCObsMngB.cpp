@@ -98,9 +98,10 @@ void	CCObsMng::EDROOM_CTX_Top_0::FInit()
 	 
 
 time.GetTime();
-time=VNextTimeOut; 
+
 VNextTimeOut+= Pr_Time(0,100000);
 
+time=VNextTimeOut; 
    //Program absolute timer 
    AttCtrlTimer.InformAt( time ); 
 }
