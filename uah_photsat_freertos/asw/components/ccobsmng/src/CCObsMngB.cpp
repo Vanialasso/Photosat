@@ -120,7 +120,7 @@ void	CCObsMng::EDROOM_CTX_Top_0::FProgAttitudeCtrl()
 	 
 	//interval = Pr_Time(X,Y); // interval of X sec + Y microsec
 
-interval=CFinal:
+interval=CFinal;
    //Program relative timer 
    AttCtrlTimer.InformIn( interval ); 
 }
