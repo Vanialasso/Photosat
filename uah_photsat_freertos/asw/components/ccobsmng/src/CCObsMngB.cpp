@@ -123,7 +123,7 @@ VNextTimeOut+= Pr_Time(0,100000); // Add X sec + Y microsec
 time=VNextTimeOut; 
 
    //Program absolute timer 
-   ObservTimer.InformAt( time ); 
+   AttCtrlTimer.InformAt( time ); 
 }
 
 
