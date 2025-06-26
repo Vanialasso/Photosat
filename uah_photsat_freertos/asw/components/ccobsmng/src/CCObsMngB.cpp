@@ -98,10 +98,11 @@ void	CCObsMng::EDROOM_CTX_Top_0::FInit()
 	 
 
 time.GetTime();
-VNextTimeOut+= Pr_Time(0,100000);
 time=VNextTimeOut; 
+VNextTimeOut+= Pr_Time(0,100000);
+
    //Program absolute timer 
-   ObservTimer.InformAt( time ); 
+   AttCtrlTimer.InformAt( time ); 
 }
 
 
